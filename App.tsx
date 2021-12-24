@@ -7,25 +7,16 @@
  */
 
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {store} from './src/config/store';
+import {Provider} from 'react-redux';
+import Router from './src/Router';
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>WOLO</Text>
-    </View>
+    <Provider store={store}>
+      <Router />
+    </Provider>
   );
 };
-
-const styles = StyleSheet.create({
-  container:{
-    flex:1/2,
-    justifyContent:'center',
-    alignItems:'center',
-  },
-  title:{
-    fontSize: 20,
-  }
-});
 
 export default App;
